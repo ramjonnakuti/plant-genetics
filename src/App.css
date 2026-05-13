@@ -140,6 +140,17 @@
   text-align: center;
 }
 
+.footer-credit {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.footer .footer-credit:not(:first-child) {
+  margin-top: 0.65rem;
+}
+
 .not-found {
   margin-bottom: 1.5rem;
   padding: 1.2rem 1.25rem;

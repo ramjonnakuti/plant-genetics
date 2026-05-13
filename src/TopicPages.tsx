@@ -1,4 +1,5 @@
 import { plantJobs, priceExamples, seedToPlantSteps } from "./topicsData";
+import { SiteCreditFooter } from "./SiteCredit";
 import "./TopicPages.css";
 
 type Props = { onHome: () => void };
@@ -36,6 +37,7 @@ export function PricesPage({ onHome }: Props) {
           </li>
         ))}
       </ul>
+      <SiteCreditFooter />
     </div>
   );
 }
@@ -69,6 +71,7 @@ export function JobsPage({ onHome }: Props) {
           </li>
         ))}
       </ul>
+      <SiteCreditFooter />
     </div>
   );
 }
@@ -103,6 +106,7 @@ export function SeedJourneyPage({ onHome }: Props) {
           </li>
         ))}
       </ol>
+      <SiteCreditFooter />
     </div>
   );
 }
@@ -173,6 +177,7 @@ Day | Condition A | Condition B | Condition C | Notes
           ))}
         </ul>
       </section>
+      <SiteCreditFooter />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { PlantProfilePage } from "./PlantProfilePage";
 import { JobsPage, PricesPage, SeedJourneyPage } from "./TopicPages";
 import { WikiPlantPage } from "./WikiPlantPage";
 import { tryLoadPlantFromWikipedia, type WikiPlantSummary } from "./wikipediaPlant";
+import { SiteCreditFooter, SiteCreditLine } from "./SiteCredit";
 import "./App.css";
 
 type Panel = "home" | "plants" | "prices" | "jobs" | "seed";
@@ -106,6 +107,7 @@ export default function App() {
         />
         <footer className="footer">
           Be safe with tools and sprays.
+          <SiteCreditLine />
         </footer>
       </div>
     );
@@ -119,6 +121,7 @@ export default function App() {
           searchedAs={plantScreen.typed}
           onBack={() => setPlantScreen(null)}
         />
+        <SiteCreditFooter />
       </div>
     );
   }
@@ -233,6 +236,7 @@ export default function App() {
           onClose={() => setExamplesOpen(false)}
           onPickName={pickExample}
         />
+        <SiteCreditFooter />
       </div>
     );
   }
@@ -331,6 +335,8 @@ export default function App() {
           <span className="topic-tile-desc">How a seed grows</span>
         </button>
       </nav>
+
+      <SiteCreditFooter />
     </div>
   );
 }
