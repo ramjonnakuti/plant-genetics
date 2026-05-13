@@ -1,0 +1,125 @@
+.wiki-plant-page {
+  margin-top: 0.35rem;
+  animation: rise 0.45s ease-out both;
+}
+
+.wiki-hero {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.25rem;
+  border-radius: var(--radius-xl);
+  border: 3px solid #fefcf6;
+  background: linear-gradient(145deg, #fefcf6 0%, #f0f8f2 100%);
+  box-shadow:
+    0 0 0 4px var(--accent),
+    0 9px 0 var(--forest),
+    0 16px 32px rgba(27, 67, 50, 0.18);
+}
+
+.wiki-photo-wrap {
+  margin: 0 0 1rem;
+  padding: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 3px solid #fefcf6;
+  background: #e8f0e8;
+}
+
+.wiki-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 22rem;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.wiki-photo-cap {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(254, 252, 246, 0.95);
+  line-height: 1.45;
+}
+
+.wiki-photo-cap a {
+  color: var(--accent);
+}
+
+.wiki-hero-text {
+  min-width: 0;
+}
+
+.wiki-searched {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.wiki-searched strong {
+  color: var(--forest);
+}
+
+.wiki-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 5vw, 2.1rem);
+  font-weight: 800;
+  margin: 0 0 0.6rem;
+  line-height: 1.15;
+  color: var(--forest);
+}
+
+.wiki-source {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.wiki-source a {
+  color: var(--accent);
+}
+
+.wiki-body {
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius);
+  border: 3px dashed var(--blossom);
+  background: rgba(254, 252, 246, 0.9);
+}
+
+.wiki-subsection {
+  margin-bottom: 1.15rem;
+}
+
+.wiki-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-subheading {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+  color: var(--forest);
+  letter-spacing: 0.02em;
+}
+
+.wiki-subsection:first-child .wiki-subheading {
+  margin-top: 0;
+}
+
+.wiki-para {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.wiki-subsection .wiki-para:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,154 @@
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plant-page {
+  margin-top: 0.35rem;
+  animation: rise 0.45s ease-out both;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1.15rem;
+  padding: 0.55rem 1.05rem;
+  border-radius: 999px;
+  border: 3px solid var(--moss);
+  background: linear-gradient(180deg, #fefcf6 0%, #e8f0e8 100%);
+  color: var(--forest);
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #3d5c32;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.back-btn:hover {
+  filter: brightness(1.02);
+}
+
+.back-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #3d5c32;
+}
+
+.plant-hero {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  margin-bottom: 1.65rem;
+  padding: 1.35rem 1.3rem;
+  border-radius: var(--radius-xl);
+  border: 3px solid #fefcf6;
+  background: linear-gradient(145deg, #fefcf6 0%, #f0f8f2 100%);
+  box-shadow:
+    0 0 0 4px var(--accent),
+    0 9px 0 var(--forest),
+    0 16px 32px rgba(27, 67, 50, 0.18);
+}
+
+.plant-emoji {
+  font-size: 3.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 0 rgba(27, 67, 50, 0.1));
+}
+
+.plant-hero-text {
+  min-width: 0;
+}
+
+.plant-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 800;
+  margin: 0 0 0.45rem;
+  line-height: 1.1;
+  color: var(--forest);
+  letter-spacing: 0.02em;
+}
+
+.plant-tagline {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #2d5a45;
+  line-height: 1.4;
+}
+
+.plant-section {
+  margin-bottom: 1.4rem;
+}
+
+.plant-section-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 0.65rem;
+  color: var(--forest);
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  border-bottom: 4px solid var(--blossom);
+  display: inline-block;
+}
+
+.plant-facts-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.plant-facts-list li {
+  margin-bottom: 0.55rem;
+}
+
+.plant-facts-list li:last-child {
+  margin-bottom: 0;
+}
+
+.plant-facts-list li::marker {
+  color: var(--accent);
+  font-size: 1.1em;
+}
+
+.plant-special-text {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(254, 252, 246, 0.98) 0%, rgba(250, 237, 205, 0.55) 100%);
+  border: 3px dashed var(--blossom);
+}
+
+.plant-tip {
+  margin-top: 1.4rem;
+  padding: 1.05rem 1.2rem;
+  border-radius: var(--radius);
+  border: 3px solid #fefcf6;
+  background: linear-gradient(95deg, #e8f5ec 0%, #d8f3dc 100%);
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+  box-shadow:
+    0 0 0 3px var(--dew),
+    0 5px 0 #52796f;
+}
+
+.plant-tip strong {
+  color: var(--forest);
+}

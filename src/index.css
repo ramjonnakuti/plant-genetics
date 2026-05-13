@@ -1,0 +1,93 @@
+:root {
+  /* Paper & leaf */
+  --bg-elevated: #fefcf6;
+  --surface: #e8f0e8;
+  --border: #a3bfa8;
+  --text: #1b2e24;
+  --text-muted: #3d5c45;
+  /* Chlorophyll / forest */
+  --accent: #2d6a4f;
+  --accent-bright: #52b788;
+  --accent-shadow: rgba(45, 106, 79, 0.38);
+  --forest: #1b4332;
+  /* Accents = nature, not candy */
+  --dew: #7aaea0;
+  --moss: #588157;
+  --sprout: #95d5b2;
+  --blossom: #d4a84b;
+  --wheat: #e9c46a;
+  --soil: #bc6c25;
+  --bark: #6c584c;
+  --cream: #faedcd;
+  --mist: #d8f3dc;
+  --warning-bg: #faf3e3;
+  --warning-border: #ddb892;
+  --warning-text: #7a5230;
+  --radius: 22px;
+  --radius-xl: 28px;
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
+  /* Legacy names → map to plant tones (so existing CSS keeps working) */
+  --kid-sky: var(--dew);
+  --kid-sun: var(--blossom);
+  --kid-coral: var(--soil);
+  --kid-grape: var(--moss);
+  --kid-lime: var(--sprout);
+  --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%232d6a4f' fill-opacity='0.075'%3E%3Cpath d='M80 145c-42-35-45-75 0-120 45 45 42 85 0 120z'/%3E%3Cpath transform='translate%28115 22%29 rotate%2820%29' d='M0 48C-24 6 24 6 0 48'/%3E%3Cpath transform='translate%2830 95%29 rotate%28-30%29' d='M0 40C-20 5 20 5 0 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--text);
+  background-color: #a8c9a8;
+  background-image:
+    var(--leaf-pattern),
+    radial-gradient(ellipse 100% 65% at 12% 18%, rgba(233, 196, 106, 0.35) 0%, transparent 48%),
+    radial-gradient(ellipse 75% 55% at 92% 12%, rgba(168, 213, 186, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse 95% 70% at 50% 100%, rgba(45, 106, 79, 0.2) 0%, transparent 52%),
+    radial-gradient(ellipse 65% 50% at 0% 88%, rgba(122, 174, 160, 0.4) 0%, transparent 46%),
+    linear-gradient(168deg, #fefae0 0%, #d8f3dc 38%, #b7e4c7 72%, #8fb996 100%);
+  background-size:
+    160px 160px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
