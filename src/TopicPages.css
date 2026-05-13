@@ -117,9 +117,10 @@
 
 .job-card {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
   margin: 0;
-  padding: 1.1rem 1.2rem;
+  padding: 1.15rem 1.25rem 1.25rem;
   border-radius: var(--radius);
   border: 3px solid #fefcf6;
   background: linear-gradient(125deg, #fefcf6 0%, #eef5f0 100%);
@@ -127,6 +128,12 @@
     0 0 0 3px var(--dew),
     0 6px 0 #52796f,
     0 10px 20px rgba(27, 67, 50, 0.08);
+}
+
+.job-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .job-emoji {
@@ -141,9 +148,9 @@
 
 .job-title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  margin: 0 0 0.4rem;
+  margin: 0;
   color: var(--forest);
 }
 
@@ -153,6 +160,80 @@
   font-weight: 700;
   color: var(--text);
   line-height: 1.55;
+}
+
+.job-text--detail {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+}
+
+.job-facts {
+  margin: 0.35rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 3px dashed rgba(45, 106, 79, 0.35);
+  background: rgba(248, 252, 249, 0.9);
+}
+
+.job-facts-row {
+  margin-bottom: 0.85rem;
+}
+
+.job-facts-row:last-child {
+  margin-bottom: 0;
+}
+
+.job-facts dt {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--forest);
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.job-facts dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.job-salary {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--soil);
+  margin-bottom: 0.35rem;
+}
+
+.job-salary-note {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.job-req-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.job-req-list li {
+  margin-bottom: 0.35rem;
+}
+
+.job-req-list li:last-child {
+  margin-bottom: 0;
+}
+
+.job-req-list li::marker {
+  color: var(--accent);
 }
 
 .seed-steps {

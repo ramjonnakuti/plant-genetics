@@ -321,7 +321,7 @@ export default function App() {
             👷
           </span>
           <span className="topic-tile-title">Plant jobs</span>
-          <span className="topic-tile-desc">Jobs with plants</span>
+          <span className="topic-tile-desc">Jobs, pay ideas, school paths, and skills</span>
         </button>
         <button
           type="button"

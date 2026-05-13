@@ -53,7 +53,9 @@ export function JobsPage({ onHome }: Props) {
         <div>
           <h2 className="topic-title">Plant jobs</h2>
           <p className="topic-lead">
-            Here are jobs for people who like plants.
+            Each card adds <strong>pay bands</strong>, <strong>school paths</strong>, and{" "}
+            <strong>things you often need</strong>. Numbers are rough U.S. examples for learning—
+            real pay changes by city, boss, and experience.
           </p>
         </div>
       </header>
@@ -61,13 +63,37 @@ export function JobsPage({ onHome }: Props) {
       <ul className="job-list">
         {plantJobs.map((job) => (
           <li key={job.title} className="job-card">
-            <span className="job-emoji" aria-hidden="true">
-              {job.emoji}
-            </span>
-            <div>
+            <div className="job-card-top">
+              <span className="job-emoji" aria-hidden="true">
+                {job.emoji}
+              </span>
               <h3 className="job-title">{job.title}</h3>
-              <p className="job-text">{job.whatTheyDo}</p>
             </div>
+            <p className="job-text">{job.whatTheyDo}</p>
+            <p className="job-text job-text--detail">{job.moreAboutTheJob}</p>
+            <dl className="job-facts">
+              <div className="job-facts-row">
+                <dt>Pay (about, per year)</dt>
+                <dd>
+                  <span className="job-salary">{job.salaryBand}</span>
+                  <span className="job-salary-note">{job.salaryNote}</span>
+                </dd>
+              </div>
+              <div className="job-facts-row">
+                <dt>School and training</dt>
+                <dd>{job.education}</dd>
+              </div>
+              <div className="job-facts-row">
+                <dt>Often asked for</dt>
+                <dd>
+                  <ul className="job-req-list">
+                    {job.requirements.map((r) => (
+                      <li key={r}>{r}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            </dl>
           </li>
         ))}
       </ul>
