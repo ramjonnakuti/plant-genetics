@@ -354,19 +354,22 @@ export type PlantExampleGroup = {
   names: string[];
 };
 
-/** Example names grouped by variety, varieties A–Z, names within each A–Z. */
-export function examplesGroupedByVariety(): PlantExampleGroup[] {
-  const map = new Map<string, PlantProfile[]>();
-  for (const p of plantProfiles) {
-    const list = map.get(p.variety) ?? [];
-    list.push(p);
-    map.set(p.variety, list);
-  }
-  const varieties = [...map.keys()].sort((a, b) => a.localeCompare(b));
-  return varieties.map((variety) => ({
-    variety,
-    names: [...map.get(variety)!]
-      .sort((a, b) => a.displayName.localeCompare(b.displayName))
-      .map((p) => p.displayName),
-  }));
+/**
+ * Short list for the Examples modal: everyday names only (no Latin or Wikipedia titles).
+ */
+export function simpleExampleGroupsForModal(): PlantExampleGroup[] {
+  return [
+    {
+      variety: "Food plants",
+      names: ["Tomato", "Strawberry", "Mint"],
+    },
+    {
+      variety: "House plants",
+      names: ["Monstera", "Snake plant", "Pothos"],
+    },
+    {
+      variety: "Flowers and trees",
+      names: ["Sunflower", "Rose", "Oak tree"],
+    },
+  ];
 }
