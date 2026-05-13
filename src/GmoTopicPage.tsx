@@ -1,5 +1,6 @@
 import { HomeBar } from "./TopicPages";
 import { SiteCreditFooter } from "./SiteCredit";
+import { gmoTopTenCrops } from "./gmoTopCrops";
 import {
   gmoFunFacts,
   gmoHowHelpsPlants,
@@ -69,6 +70,41 @@ export function GmoTopicPage({ onHome }: Props) {
         {gmoHowHelpsPlants.map((line) => (
           <RichLine key={line} text={line} />
         ))}
+      </section>
+
+      <section className="gmo-section gmo-section--gallery" aria-labelledby="gmo-top10-heading">
+        <h3 id="gmo-top10-heading" className="gmo-section-title">
+          Ten farm crops where GMO helped (with pictures)
+        </h3>
+        <p className="gmo-para gmo-para--lead">
+          These are big-world crops grown for food, oil, sugar, or fiber—not the little fern on your desk. Each card
+          says one way scientists and farmers used gene tools to solve a real problem.
+        </p>
+        <ul className="gmo-crop-grid">
+          {gmoTopTenCrops.map((crop) => (
+            <li key={crop.name} className="gmo-crop-card">
+              <figure className="gmo-crop-figure">
+                <img
+                  className="gmo-crop-img"
+                  src={crop.imageUrl}
+                  alt={`${crop.name} — example photo`}
+                  width={330}
+                  height={220}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="gmo-crop-cap">
+                  Photo from{" "}
+                  <a href={crop.wikiArticle} target="_blank" rel="noreferrer noopener">
+                    Wikipedia
+                  </a>
+                </figcaption>
+              </figure>
+              <h4 className="gmo-crop-name">{crop.name}</h4>
+              <p className="gmo-crop-helped">{crop.howGmoHelped}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="gmo-section" aria-labelledby="gmo-examples-heading">
