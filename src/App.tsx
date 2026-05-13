@@ -3,13 +3,14 @@ import { findPlantByName } from "./plantProfiles";
 import type { PlantProfile } from "./plantProfiles";
 import { ExamplesModal } from "./ExamplesModal";
 import { PlantProfilePage } from "./PlantProfilePage";
+import { GmoTopicPage } from "./GmoTopicPage";
 import { JobsPage, PricesPage, SeedJourneyPage } from "./TopicPages";
 import { WikiPlantPage } from "./WikiPlantPage";
 import { tryLoadPlantFromWikipedia, type WikiPlantSummary } from "./wikipediaPlant";
 import { SiteCreditFooter, SiteCreditLine } from "./SiteCredit";
 import "./App.css";
 
-type Panel = "home" | "plants" | "prices" | "jobs" | "seed";
+type Panel = "home" | "plants" | "prices" | "jobs" | "seed" | "gmo";
 
 type PlantScreen =
   | null
@@ -146,6 +147,14 @@ export default function App() {
     return (
       <div className="app">
         <SeedJourneyPage onHome={goHome} />
+      </div>
+    );
+  }
+
+  if (panel === "gmo") {
+    return (
+      <div className="app">
+        <GmoTopicPage onHome={goHome} />
       </div>
     );
   }
@@ -333,6 +342,17 @@ export default function App() {
           </span>
           <span className="topic-tile-title">Seed → plant</span>
           <span className="topic-tile-desc">How a seed grows</span>
+        </button>
+        <button
+          type="button"
+          className="topic-tile topic-tile--gmo"
+          onClick={() => setPanel("gmo")}
+        >
+          <span className="topic-tile-emoji" aria-hidden="true">
+            🧬
+          </span>
+          <span className="topic-tile-title">GMO & genes</span>
+          <span className="topic-tile-desc">What GMO means and how it helps plants</span>
         </button>
       </nav>
 

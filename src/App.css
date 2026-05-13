@@ -632,6 +632,11 @@
   --tile-depth: var(--forest);
 }
 
+.topic-tile--gmo {
+  --tile-pop: #8b7bc9;
+  --tile-depth: #4b3f7a;
+}
+
 .topic-tile--science {
   --tile-pop: var(--bark);
   --tile-depth: #4a3f35;

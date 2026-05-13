@@ -1,14 +1,83 @@
+import { useState } from "react";
 import { plantJobs, priceExamples, seedToPlantSteps } from "./topicsData";
 import { SiteCreditFooter } from "./SiteCredit";
 import "./TopicPages.css";
 
 type Props = { onHome: () => void };
 
-function HomeBar({ onHome }: Props) {
+export function HomeBar({ onHome }: Props) {
   return (
     <button type="button" className="topic-home-bar" onClick={onHome}>
       ← Home
     </button>
+  );
+}
+
+function JobsAccordionList() {
+  const [openTitle, setOpenTitle] = useState<string | null>(null);
+
+  return (
+    <>
+      {plantJobs.map((job) => {
+        const open = openTitle === job.title;
+        const panelId = `job-panel-${job.title.replace(/\s+/g, "-")}`;
+        const btnId = `job-btn-${job.title.replace(/\s+/g, "-")}`;
+        return (
+          <li key={job.title} className="job-card job-card--accordion">
+            <button
+              id={btnId}
+              type="button"
+              className="job-card-toggle"
+              aria-expanded={open}
+              aria-controls={panelId}
+              onClick={() => setOpenTitle(open ? null : job.title)}
+            >
+              <div className="job-card-toggle-inner">
+                <div className="job-card-top">
+                  <span className="job-emoji" aria-hidden="true">
+                    {job.emoji}
+                  </span>
+                  <h3 className="job-title">{job.title}</h3>
+                </div>
+                <span className="job-chevron" aria-hidden="true">
+                  {open ? "▲" : "▼"}
+                </span>
+              </div>
+              <p className="job-preview">{job.whatTheyDo}</p>
+              <span className="job-tap-hint">{open ? "Tap to close details" : "Tap for pay, school, and more"}</span>
+            </button>
+            {open ? (
+              <div id={panelId} className="job-card-panel" role="region" aria-labelledby={btnId}>
+                <p className="job-text job-text--detail">{job.moreAboutTheJob}</p>
+                <dl className="job-facts">
+                  <div className="job-facts-row">
+                    <dt>Pay (about, per year)</dt>
+                    <dd>
+                      <span className="job-salary">{job.salaryBand}</span>
+                      <span className="job-salary-note">{job.salaryNote}</span>
+                    </dd>
+                  </div>
+                  <div className="job-facts-row">
+                    <dt>School and training</dt>
+                    <dd>{job.education}</dd>
+                  </div>
+                  <div className="job-facts-row">
+                    <dt>Often asked for</dt>
+                    <dd>
+                      <ul className="job-req-list">
+                        {job.requirements.map((r) => (
+                          <li key={r}>{r}</li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            ) : null}
+          </li>
+        );
+      })}
+    </>
   );
 }
 
@@ -53,49 +122,14 @@ export function JobsPage({ onHome }: Props) {
         <div>
           <h2 className="topic-title">Plant jobs</h2>
           <p className="topic-lead">
-            Each card adds <strong>pay bands</strong>, <strong>school paths</strong>, and{" "}
-            <strong>things you often need</strong>. Numbers are rough U.S. examples for learning—
-            real pay changes by city, boss, and experience.
+            <strong>Tap a job</strong> to open pay, school paths, and skills. Tap again to close. Numbers are rough
+            U.S. examples for learning—real pay changes by city, boss, and experience.
           </p>
         </div>
       </header>
 
       <ul className="job-list">
-        {plantJobs.map((job) => (
-          <li key={job.title} className="job-card">
-            <div className="job-card-top">
-              <span className="job-emoji" aria-hidden="true">
-                {job.emoji}
-              </span>
-              <h3 className="job-title">{job.title}</h3>
-            </div>
-            <p className="job-text">{job.whatTheyDo}</p>
-            <p className="job-text job-text--detail">{job.moreAboutTheJob}</p>
-            <dl className="job-facts">
-              <div className="job-facts-row">
-                <dt>Pay (about, per year)</dt>
-                <dd>
-                  <span className="job-salary">{job.salaryBand}</span>
-                  <span className="job-salary-note">{job.salaryNote}</span>
-                </dd>
-              </div>
-              <div className="job-facts-row">
-                <dt>School and training</dt>
-                <dd>{job.education}</dd>
-              </div>
-              <div className="job-facts-row">
-                <dt>Often asked for</dt>
-                <dd>
-                  <ul className="job-req-list">
-                    {job.requirements.map((r) => (
-                      <li key={r}>{r}</li>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-            </dl>
-          </li>
-        ))}
+        <JobsAccordionList />
       </ul>
       <SiteCreditFooter />
     </div>
