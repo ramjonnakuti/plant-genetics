@@ -68,7 +68,7 @@ export function ExamplesModal({
         </header>
         <div className="examples-modal-body">
           <p className="examples-note">
-            Tap a name to look it up. These are everyday plant names—pick one and try{" "}
+            Tap a name to look it up—great for a <strong>live demo</strong>. These are everyday plant names; then tap{" "}
             <strong>Go</strong> on the main screen.
           </p>
           {payload.groups.map((g) => (

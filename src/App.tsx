@@ -258,7 +258,8 @@ export default function App() {
           Plant facts
         </h1>
         <p>
-          Easy plant facts for all ages.
+          Look up plants, share facts with your class, and explore <strong>genes and GMO</strong> in plain words—built
+          for curious kids and quick demos.
         </p>
       </header>
 

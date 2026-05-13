@@ -25,3 +25,10 @@ export const gmoFunFacts = [
   "A GMO plant is still a **real plant**—it still needs sun, water, soil, and air.",
   "Not every new plant in a store is GMO. Many new apples or roses are made with **cross-breeding**, not GMO labels.",
 ];
+
+/** Ideas for a student presenter—optional script. */
+export const gmoShowcaseTips = [
+  "Pick one plant on the home page, read a fact out loud, then ask what part of the plant you would study with a microscope.",
+  "Open **GMO & genes** and explain one helper trait—like papaya fighting a virus or some corn that bugs bother less.",
+  "Close with a curiosity question: If you could give any crop one safe super-trait, what would it be and why?",
+];

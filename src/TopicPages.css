@@ -526,6 +526,19 @@
   margin-bottom: 0;
 }
 
-.gmo-bullet-list li::marker {
-  color: #7b68c9;
+.gmo-section--showcase {
+  background: linear-gradient(155deg, #fefcf6 0%, #fff8e7 45%, #fcefb8 100%);
+  box-shadow:
+    0 0 0 3px rgba(233, 196, 106, 0.65),
+    0 6px 0 #9a7a28,
+    0 10px 20px rgba(27, 67, 50, 0.08);
+}
+
+.gmo-section--showcase .gmo-section-title {
+  color: #6b5420;
+  border-bottom-color: #e9c46a;
+}
+
+.gmo-section--showcase .gmo-bullet-list li::marker {
+  color: #bc6c25;
 }
