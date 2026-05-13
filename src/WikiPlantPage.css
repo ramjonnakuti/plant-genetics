@@ -90,6 +90,18 @@
   background: rgba(254, 252, 246, 0.9);
 }
 
+.wiki-kid-lead {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius);
+  background: rgba(255, 251, 235, 0.95);
+  border: 2px dashed rgba(212, 168, 75, 0.55);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.45;
+}
+
 .wiki-subsection {
   margin-bottom: 1.15rem;
 }

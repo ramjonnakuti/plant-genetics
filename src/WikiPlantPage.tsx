@@ -1,4 +1,5 @@
 import type { WikiPlantSummary } from "./wikipediaPlant";
+import { simplifyWikiTextForKids, stripWikiHtmlToText } from "./wikiPlainAndSimple";
 import "./WikiPlantPage.css";
 
 type Props = {
@@ -28,13 +29,15 @@ function sectionsFromExtract(extract: string): { heading: string; paragraphs: st
   }
 
   return [
-    { heading: "What this plant is", paragraphs: [sentences[0]!] },
-    { heading: "More facts", paragraphs: sentences.slice(1) },
+    { heading: "What it is", paragraphs: [sentences[0]!] },
+    { heading: "More simple facts", paragraphs: sentences.slice(1) },
   ];
 }
 
 export function WikiPlantPage({ data, searchedAs, onBack }: Props) {
-  const sections = sectionsFromExtract(data.extract);
+  const plainExtract = simplifyWikiTextForKids(data.extract);
+  const sections = sectionsFromExtract(plainExtract);
+  const displayTitle = stripWikiHtmlToText(data.displayTitle);
 
   return (
     <div className="wiki-plant-page">
@@ -55,30 +58,33 @@ export function WikiPlantPage({ data, searchedAs, onBack }: Props) {
               decoding="async"
             />
             <figcaption className="wiki-photo-cap">
-              Photo from{" "}
+              Picture from{" "}
               <a href={data.articleUrl} target="_blank" rel="noreferrer noopener">
                 Wikipedia
-              </a>{" "}
+              </a>
               .
             </figcaption>
           </figure>
         )}
         <div className="wiki-hero-text">
           <p className="wiki-searched">
-            You typed: <strong>{searchedAs}</strong>
+            You searched for: <strong>{searchedAs}</strong>
           </p>
-          <h2 className="wiki-title">{data.displayTitle}</h2>
+          <h2 className="wiki-title">{displayTitle}</h2>
           <p className="wiki-source">
-            Text from{" "}
+            The full article is on{" "}
             <a href={data.articleUrl} target="_blank" rel="noreferrer noopener">
-              English Wikipedia
-            </a>{" "}
-            . Read more on that page.
+              Wikipedia
+            </a>
+            . Below, we use shorter words when we can.
           </p>
         </div>
       </header>
 
       <section className="wiki-body" aria-label="Article summary">
+        <p className="wiki-kid-lead">
+          Take your time. Hard words are changed to easier ones when we can.
+        </p>
         {sections.map((section, si) => (
           <div key={si} className="wiki-subsection">
             {section.heading ? (

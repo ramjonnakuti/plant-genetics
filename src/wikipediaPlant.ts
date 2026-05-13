@@ -1,5 +1,7 @@
 /** Load plant info from English Wikipedia when we have no local profile. */
 
+import { stripWikiHtmlToText } from "./wikiPlainAndSimple";
+
 export type WikiPlantSummary = {
   title: string;
   displayTitle: string;
@@ -62,8 +64,8 @@ async function fetchSummary(
   if (!articleUrl) return null;
   return {
     title: d.title ?? title,
-    displayTitle: d.displaytitle ?? d.title ?? title,
-    extract: d.extract,
+    displayTitle: stripWikiHtmlToText(d.displaytitle ?? d.title ?? title),
+    extract: stripWikiHtmlToText(d.extract),
     imageUrl: d.thumbnail?.source,
     articleUrl,
   };
