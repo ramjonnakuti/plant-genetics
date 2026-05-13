@@ -4,6 +4,7 @@ import {
   gmoFunFacts,
   gmoHowHelpsPlants,
   gmoKidNotes,
+  gmoNamedPlantExamples,
   gmoShowcaseTips,
   gmoWhatIs,
 } from "./gmoTopicContent";
@@ -66,6 +67,19 @@ export function GmoTopicPage({ onHome }: Props) {
           How can GMO ideas help plants?
         </h3>
         {gmoHowHelpsPlants.map((line) => (
+          <RichLine key={line} text={line} />
+        ))}
+      </section>
+
+      <section className="gmo-section" aria-labelledby="gmo-examples-heading">
+        <h3 id="gmo-examples-heading" className="gmo-section-title">
+          Mango, watermelon, and sunflower
+        </h3>
+        <p className="gmo-para gmo-para--lead">
+          Here are three familiar plants people talk about when they mean &quot;better&quot; fruit, seeds, or field
+          survival—sometimes with lab genes, sometimes with older breeding tricks.
+        </p>
+        {gmoNamedPlantExamples.map((line) => (
           <RichLine key={line} text={line} />
         ))}
       </section>

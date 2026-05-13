@@ -257,10 +257,7 @@ export default function App() {
           <span aria-hidden="true">🌱 </span>
           Plant facts
         </h1>
-        <p>
-          Look up plants, share facts with your class, and explore <strong>genes and GMO</strong> in plain words—built
-          for curious kids and quick demos.
-        </p>
+        <p className="header-tagline">Learn more about plants</p>
       </header>
 
       <form className="form home-search" onSubmit={onHomeSearch}>

@@ -13,6 +13,13 @@ export const gmoHowHelpsPlants = [
   "Scientists also study GMO ideas for **drought** (very dry weather) or **extra vitamins** to help people in places where food is harder to get.",
 ];
 
+/** Named crops kids know—mix of lab GMO stories and classic breeding, in plain words. */
+export const gmoNamedPlantExamples = [
+  "**Mango**: Growers want sweet fruit without losing whole trees to rot or disease. Scientists have tested gene tools so some mango trees can **fight sickness** better and keep fruit in markets.",
+  "**Watermelon**: The **seedless** watermelon many families buy comes from breeding the plant so seeds barely grow—that uses chromosome tricks, not the same rules as every GMO food label, but it still shows how people **shape plants on purpose**.",
+  "**Sunflower**: Big fields of sunflowers are picked for seeds and oil. Breeders and labs work on genes so sunflowers can **handle bugs or dry summers** and still make lots of seeds for snacks and oil.",
+];
+
 export const gmoKidNotes = [
   "Most **house plants** and **backyard flowers** you buy are **not** GMO—they are picked because they look nice or grow well in a pot.",
   "At the grocery store, **special labels** tell you if food was made with GMO rules in your country. Rules change by place.",

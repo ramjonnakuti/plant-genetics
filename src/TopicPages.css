@@ -501,6 +501,12 @@
   margin-bottom: 0;
 }
 
+.gmo-para--lead {
+  margin-bottom: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 .gmo-para strong {
   color: #4b3f7a;
 }
